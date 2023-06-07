@@ -1,0 +1,70 @@
+import random
+import sys
+
+playerScore = 0
+ComputerScore = 0
+
+playerAgain = input("1 for PLAY AGAIN ----- 2 for STOP: ")
+
+while playerAgain != "2":
+    print("1 ------ PAPER")
+    print("2 ------ SCISSORS")
+    print("3 ------ ROCK")
+
+    player = input("Enter your Choice: ")
+    computer = random.choice(["ROCK", "PAPER", "SCISSORS"])
+
+    if (player == "1" and computer == "SCISSORS") or (player == "2" and computer == "ROCK") or (
+            player == "3" and computer == "PAPERS"):
+        print("1 ------ PAPER")
+        print("2 ------ SCISSORS")
+        print("3 ------ ROCK")
+        print("Computer Choose", computer)
+        print("You Choose", player )
+        print("You LOSE")
+        ComputerScore += 1
+        print("Your Score is ", playerScore)
+        print("Computer Score is ", ComputerScore)
+        playerAgain = input("1 for PLAY AGAIN ----- 2 for STOP: ")
+
+    elif (player == "1" and computer == "PAPERS") or (player == "2" and computer == "SCISSORS") or (
+            player == "3" and computer == "ROCK"):
+        print("1 ------ PAPER")
+        print("2 ------ SCISSORS")
+        print("3 ------ ROCK")
+        print("Computer Choose", computer)
+        print("You Choose", player)
+
+        print("You a TIE")
+        print("Your Score is ", playerScore)
+        print("Computer Score is ", ComputerScore)
+        playerAgain = input("1 for PLAY AGAIN ----- 2 for STOP: ")
+
+    else:
+        print("1 ------ PAPER")
+        print("2 ------ SCISSORS")
+        print("3 ------ ROCK")
+        print("Computer Choose", computer)
+        print("You Choose", player)
+
+        print("You a WIN")
+
+        playerScore+= 1
+        print("Your Score is ", playerScore)
+        print("Computer Score is ",ComputerScore)
+        playerAgain = input("1 for PLAY AGAIN ----- 2 for STOP: ")
+
+else:
+
+    print("Total Score")
+    print("Player Total Score is" , playerScore)
+    print("Computer Total Score is", ComputerScore)
+
+    if playerScore > ComputerScore:
+        print("Player Wins")
+        sys.exit()
+
+    else:
+
+        print("Compputer Wins")
+        sys.exit()
